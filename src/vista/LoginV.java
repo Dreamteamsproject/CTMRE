@@ -31,8 +31,8 @@ public class LoginV extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         LoginVSalir = new javax.swing.JButton();
         LoginVUsuario = new javax.swing.JTextField();
-        LoginVPassword = new javax.swing.JTextField();
         LoginVIngresar = new javax.swing.JButton();
+        LoginVPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -68,7 +68,9 @@ public class LoginV extends javax.swing.JFrame {
         jPanel2.add(LoginVSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 100, 20));
 
         LoginVUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        LoginVUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         LoginVUsuario.setText("Ingresar Usuario");
+        LoginVUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         LoginVUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LoginVUsuarioMouseEntered(evt);
@@ -89,28 +91,6 @@ public class LoginV extends javax.swing.JFrame {
         });
         jPanel2.add(LoginVUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 220, -1));
 
-        LoginVPassword.setForeground(new java.awt.Color(153, 153, 153));
-        LoginVPassword.setText("Ingresar Contraseña");
-        LoginVPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LoginVPasswordMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LoginVPasswordMouseExited(evt);
-            }
-        });
-        LoginVPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginVPasswordActionPerformed(evt);
-            }
-        });
-        LoginVPassword.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                LoginVPasswordKeyPressed(evt);
-            }
-        });
-        jPanel2.add(LoginVPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 220, -1));
-
         LoginVIngresar.setText("Ingresar");
         LoginVIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +103,15 @@ public class LoginV extends javax.swing.JFrame {
             }
         });
         jPanel2.add(LoginVIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 340, 90, -1));
+
+        LoginVPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LoginVPassword.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LoginVPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LoginVPasswordKeyPressed(evt);
+            }
+        });
+        jPanel2.add(LoginVPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 220, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 410));
 
@@ -145,10 +134,6 @@ public class LoginV extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LoginVUsuarioActionPerformed
 
-    private void LoginVPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginVPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginVPasswordActionPerformed
-
     private void LoginVUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginVUsuarioMouseEntered
         if(LoginVUsuario.getText().equals("Ingresar Usuario")){LoginVUsuario.setText(""); LoginVUsuario.setForeground(Color.black);}
     }//GEN-LAST:event_LoginVUsuarioMouseEntered
@@ -163,20 +148,6 @@ public class LoginV extends javax.swing.JFrame {
             if(validar.consultarUser()){System.exit(0);}}
     }//GEN-LAST:event_LoginVUsuarioKeyPressed
 
-    private void LoginVPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginVPasswordMouseEntered
-        if(LoginVPassword.getText().equals("Ingresar Contraseña")){LoginVPassword.setText(""); LoginVPassword.setForeground(Color.black);}
-    }//GEN-LAST:event_LoginVPasswordMouseEntered
-
-    private void LoginVPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginVPasswordMouseExited
-        if(LoginVPassword.getText().equals("")){LoginVPassword.setText("Ingresar Contraseña"); LoginVPassword.setForeground(Color.gray);}
-    }//GEN-LAST:event_LoginVPasswordMouseExited
-
-    private void LoginVPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoginVPasswordKeyPressed
-        if(LoginVPassword.getText().equals("Ingresar Contraseña")){LoginVPassword.setText("");LoginVPassword.setForeground(Color.black);}
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){var validar = new LoginC(LoginVUsuario.getText(),LoginVPassword.getText());
-           if(validar.consultarUser()){System.exit(0);}}
-    }//GEN-LAST:event_LoginVPasswordKeyPressed
-
     private void LoginVIngresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoginVIngresarKeyPressed
        if(evt.getKeyCode() == KeyEvent.VK_ENTER){var validar = new LoginC(LoginVUsuario.getText(),LoginVPassword.getText());
        if(validar.consultarUser()){System.exit(0);}}
@@ -190,6 +161,11 @@ public class LoginV extends javax.swing.JFrame {
         var validar = new LoginC(LoginVUsuario.getText(),LoginVPassword.getText());
         if(validar.consultarUser()){System.exit(0);}
     }//GEN-LAST:event_LoginVIngresarActionPerformed
+
+    private void LoginVPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoginVPasswordKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){var validar = new LoginC(LoginVUsuario.getText(),LoginVPassword.getText());
+           if(validar.consultarUser()){System.exit(0);}}
+    }//GEN-LAST:event_LoginVPasswordKeyPressed
 
     /**
      * @param args the command line arguments
@@ -228,7 +204,7 @@ public class LoginV extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LoginVIngresar;
-    private javax.swing.JTextField LoginVPassword;
+    private javax.swing.JPasswordField LoginVPassword;
     private javax.swing.JButton LoginVSalir;
     private javax.swing.JTextField LoginVUsuario;
     private javax.swing.JLabel jLabel1;
