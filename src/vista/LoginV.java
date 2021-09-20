@@ -45,7 +45,7 @@ public class LoginV extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido a GestionProject");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 340, 40));
 
-        LoginVSalir.setBackground(new java.awt.Color(51, 51, 255));
+        LoginVSalir.setBackground(new java.awt.Color(153, 153, 153));
         LoginVSalir.setText("Salir");
         LoginVSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -65,7 +65,7 @@ public class LoginV extends javax.swing.JFrame {
                 LoginVSalirKeyPressed(evt);
             }
         });
-        jPanel2.add(LoginVSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 100, 20));
+        jPanel2.add(LoginVSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 0, -1, 30));
 
         LoginVUsuario.setForeground(new java.awt.Color(153, 153, 153));
         LoginVUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -91,7 +91,9 @@ public class LoginV extends javax.swing.JFrame {
         });
         jPanel2.add(LoginVUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 220, -1));
 
+        LoginVIngresar.setBackground(new java.awt.Color(255, 255, 255));
         LoginVIngresar.setText("Ingresar");
+        LoginVIngresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         LoginVIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginVIngresarActionPerformed(evt);
@@ -102,7 +104,7 @@ public class LoginV extends javax.swing.JFrame {
                 LoginVIngresarKeyPressed(evt);
             }
         });
-        jPanel2.add(LoginVIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 340, 90, -1));
+        jPanel2.add(LoginVIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 90, -1));
 
         LoginVPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         LoginVPassword.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -127,7 +129,7 @@ public class LoginV extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginVSalirMouseEntered
 
     private void LoginVSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginVSalirMouseExited
-        LoginVSalir.setBackground(Color.blue);
+        LoginVSalir.setBackground(Color.gray);
     }//GEN-LAST:event_LoginVSalirMouseExited
 
     private void LoginVUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginVUsuarioActionPerformed
